@@ -1,0 +1,27 @@
+﻿@model List<Modulo2Proyectopráctico.Models.Videogames>
+@{
+    ViewBag.Title = "Ranking";
+}
+
+
+<h3 class="page-header">
+    Ranking
+</h3>
+<table class="table" align="center">
+    <thead>
+        <tr>
+            <th style="width:200px;">Name</th>
+            <th style="width:200px;">Score</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Modulo2Proyectopráctico.Models.Videogames Videogame in Model)
+        {
+            <tr>
+                <td>@(Videogame.name)</td>
+                <td>@(Videogame.score)</td>
+               
+                </tr>
+        }
+</table>

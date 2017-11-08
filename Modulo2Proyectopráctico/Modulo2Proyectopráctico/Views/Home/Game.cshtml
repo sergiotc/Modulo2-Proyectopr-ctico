@@ -1,0 +1,31 @@
+﻿@model Modulo2Proyectopráctico.Models.Videogames
+@{
+    ViewBag.Title = "Game";
+}
+
+<h2>Game Title</h2>
+<a class="btn btn-xs btn-primary" href="~/home/Edit/@Model.id">Editar</a>
+<a onclick="return confirm('¿Deseas eliminar esta compra?');" class="btn btn-xs btn-danger" href="~/home/Remove/ @Model.id">Delete</a>
+<div class="panel panel-default">
+    <div class="panel-heading">Información del juego </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Name</dt>
+            <dd>@Model.name</dd>
+            <dt>Publisher</dt>
+            <dd>@Model.publisher</dd>
+            <dt>Year</dt>
+            <dd>@Model.year</dd>
+            <dt>Genre</dt>
+            <dd>@Model.Genre()</dd>
+            <dt>Platfrom</dt>
+            <dd>@Model.Platfrom()</dd>
+            <dt>Score</dt>
+            <dd>@Model.score</dd>
+            <dt>Online</dt>
+            <dd>@(Model.online ? "Yes" : "No")</dd>
+            <dt>PEGI</dt>
+            <dd>@Model.PEGI()</dd>
+        </dl>
+    </div>
+</div>

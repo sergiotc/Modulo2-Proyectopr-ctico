@@ -1,0 +1,34 @@
+﻿@model List<Modulo2Proyectopráctico.Models.Videogames>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3 class="page-header" aling="center">
+    Game List
+    <a class="btn btn-xs btn-primary" href="~/home/NewGame">New Game</a>
+    <a class="btn btn-xs btn-primary" href="~/Home/Ranking">Ranking</a>
+</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:200px;">Name</th>
+            <th style="width:200px;">Publisher</th>
+            <th style="width:200px;">Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Modulo2Proyectopráctico.Models.Videogames Videogame in Model)
+        {
+            <tr>
+                <td>@(Videogame.name)</td>
+                <td>@(Videogame.publisher)</td>
+                <td>@Videogame.Genre()</td>
+                <td>
+                    <a class="btn btn-xs btn-default" href="~/home/game/@Videogame.id">Show</a>
+                    
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
